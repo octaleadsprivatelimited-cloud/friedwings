@@ -3229,11 +3229,11 @@ body[data-page="home"] .section__subtitle {
 }
 
 .menu__category--wellness-teas {
-    background-image: url("https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=900&q=70");
+    background-image: url("../assets/menu/ginger-tea.jpg");
 }
 
 .menu__category--mocktails {
-    background-image: url("https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=900&q=70");
+    background-image: url("../assets/menu/Mocktails.jpg");
 }
 
 .menu__category--milk-coffee {
@@ -3265,19 +3265,19 @@ body[data-page="home"] .section__subtitle {
 }
 
 .menu__category--chicken-wings {
-    background-image: url("../assets/menu/fried-chicken.avif");
+    background-image: url("../assets/menu/chicken-wings1.jpg");
 }
 
 .menu__category--chicken-legs {
-    background-image: url("https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=900&q=70");
+    background-image: url("../assets/menu/chicken-legs.jpg");
 }
 
 .menu__category--chicken-lollipop {
-    background-image: url("https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=900&q=70");
+    background-image: url("../assets/menu/chicken-lollipops.webp");
 }
 
 .menu__category--chicken-strips {
-    background-image: url("https://images.unsplash.com/photo-1484659619207-9165d119dafe?auto=format&fit=crop&w=900&q=70");
+    background-image: url("../assets/menu/chicken-strips.jpg");
 }
 
 .experience {
