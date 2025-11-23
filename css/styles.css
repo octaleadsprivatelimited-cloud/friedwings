@@ -375,29 +375,62 @@ img {
     color: #1a1a1a;
 }
 
-.nav__ctas {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+    .nav__ctas {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
 
 .nav__cta--highlight {
     background: var(--accent);
     color: #ffffff;
     border: 2px solid var(--accent);
-    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
-    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4), 0 0 20px rgba(255, 107, 61, 0.3);
+    font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-size: 0.75rem;
     padding: 0.55rem 1.25rem;
+    position: relative;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.nav__cta--highlight::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 999px;
+    background: linear-gradient(45deg, var(--accent), var(--accent-2), var(--accent));
+    background-size: 200% 200%;
+    z-index: -1;
+    opacity: 0.5;
+    animation: gradient-shift 3s ease infinite;
 }
 
 .nav__cta--highlight:hover {
     background: #b45309;
     color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.5), 0 0 30px rgba(255, 107, 61, 0.4);
+    animation: none;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4), 0 0 20px rgba(255, 107, 61, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(217, 119, 6, 0.6), 0 0 30px rgba(255, 107, 61, 0.5);
+    }
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .nav__toggle {
@@ -2463,6 +2496,48 @@ body[data-page="experience"] .experience-stats__card p {
     color: #4b5563;
 }
 
+body[data-page="experience"] .timeline__step {
+    background: #fafafa;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body[data-page="experience"] .timeline__step h3 {
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+body[data-page="experience"] .timeline__step p {
+    color: #4b5563;
+    margin: 0.5rem 0 0;
+    line-height: 1.6;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+}
+
+body[data-page="experience"] .timeline__step p strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+body[data-page="experience"] .timeline__badge {
+    background: rgba(217, 119, 6, 0.1);
+    color: var(--accent);
+}
+
+body[data-page="experience"] .timeline__line {
+    background: linear-gradient(to right, var(--accent), rgba(217, 119, 6, 0.2));
+}
+
+body[data-page="experience"] .timeline__node {
+    background: var(--accent);
+    border: 3px solid #fafafa;
+    box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.15);
+}
+
+body[data-page="experience"] .section__header h2 {
+    color: #1a1a1a;
+}
+
 body[data-page="experience"] .cta-strip {
     background: #fafafa;
 }
@@ -4023,8 +4098,15 @@ textarea:focus {
 }
 
 @media (max-width: 640px) {
+    /* Make nav sticky on mobile for better CTA visibility */
     .nav {
         padding: 0.45rem 0.9rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     }
 
     /* Hide decorative cup/steam icon on mobile header */
@@ -4056,12 +4138,69 @@ textarea:focus {
         height: 24px;
     }
 
-    /* Make highlight CTA more compact on mobile */
+    /* Make highlight CTA prominent and eye-catching on mobile */
     .nav__cta--highlight {
-        font-size: 0.62rem;
-        letter-spacing: 0.1em;
-        padding: 0.5rem 0.9rem;
-        box-shadow: 0 10px 20px rgba(255, 107, 61, 0.35);
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        padding: 0.65rem 1.1rem;
+        box-shadow: 0 6px 25px rgba(217, 119, 6, 0.5), 0 0 25px rgba(255, 107, 61, 0.4), 0 4px 10px rgba(0, 0, 0, 0.2);
+        animation: mobile-pulse-glow 1.5s ease-in-out infinite;
+        font-weight: 800;
+        border-width: 2.5px;
+        position: relative;
+        z-index: 10;
+        min-width: fit-content;
+        white-space: nowrap;
+    }
+    
+    .nav__cta--highlight::before {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border-radius: 999px;
+        background: linear-gradient(45deg, var(--accent), var(--accent-2), var(--accent));
+        background-size: 200% 200%;
+        z-index: -1;
+        opacity: 0.6;
+        animation: gradient-shift 2s ease infinite;
+        filter: blur(4px);
+    }
+    
+    .nav__cta--highlight::after {
+        content: '🔥';
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        font-size: 0.9rem;
+        animation: bounce-icon 2s ease-in-out infinite;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    
+    .nav__cta--highlight:hover,
+    .nav__cta--highlight:active {
+        transform: scale(1.08);
+        box-shadow: 0 8px 30px rgba(217, 119, 6, 0.6), 0 0 35px rgba(255, 107, 61, 0.5), 0 6px 15px rgba(0, 0, 0, 0.3);
+        animation: none;
+    }
+    
+    @keyframes mobile-pulse-glow {
+        0%, 100% {
+            box-shadow: 0 6px 25px rgba(217, 119, 6, 0.5), 0 0 25px rgba(255, 107, 61, 0.4), 0 4px 10px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+        }
+        50% {
+            box-shadow: 0 8px 30px rgba(217, 119, 6, 0.7), 0 0 35px rgba(255, 107, 61, 0.6), 0 6px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
+        }
+    }
+    
+    @keyframes bounce-icon {
+        0%, 100% {
+            transform: translateY(0) scale(1);
+        }
+        50% {
+            transform: translateY(-4px) scale(1.1);
+        }
     }
 
     .nav__icon .cup {
@@ -4082,6 +4221,30 @@ textarea:focus {
     .footer__links {
         flex-direction: column;
         gap: 0.9rem;
+    }
+    
+    /* Additional mobile enhancements for franchise CTA */
+    .nav__ctas {
+        gap: 0.75rem;
+        flex: 1;
+        justify-content: flex-end;
+    }
+    
+    .nav__ctas .nav__cta--highlight {
+        order: 1;
+        margin-left: auto;
+    }
+    
+    /* Add a subtle shake animation on page load for attention */
+    @keyframes attention-shake {
+        0%, 100% { transform: translateX(0) scale(1); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-2px) scale(1.02); }
+        20%, 40%, 60%, 80% { transform: translateX(2px) scale(1.02); }
+    }
+    
+    /* Apply attention animation on first load */
+    .nav__cta--highlight {
+        animation: mobile-pulse-glow 1.5s ease-in-out infinite, attention-shake 0.5s ease 0.5s;
     }
 }
 
