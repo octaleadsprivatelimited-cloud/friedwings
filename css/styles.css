@@ -3300,11 +3300,11 @@ body[data-page="home"] .section__subtitle {
 }
 
 .menu__category--teas {
-    background-image: url("../assets/menu/Barista%20pouring%20signature%20teas.jpeg");
+    background-image: url("../assets/menu/teas.jpg");
 }
 
 .menu__category--wellness-teas {
-    background-image: url("../assets/menu/ginger-tea.jpg");
+    background-image: url("../assets/wellness-teas.webp");
 }
 
 .menu__category--mocktails {
@@ -3328,7 +3328,7 @@ body[data-page="home"] .section__subtitle {
 }
 
 .menu__category--snacks {
-    background-image: url("https://images.unsplash.com/photo-1506086679524-493c64fdfaa6?auto=format&fit=crop&w=900&q=70");
+    background-image: url("../assets/snacks.jpg");
 }
 
 .menu__category--veg-sandwiches {
@@ -3336,7 +3336,7 @@ body[data-page="home"] .section__subtitle {
 }
 
 .menu__category--non-veg-sandwiches {
-    background-image: url("https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=70");
+    background-image: url("../assets/non-veg-sandwiches.jpg");
 }
 
 .menu__category--chicken-wings {
