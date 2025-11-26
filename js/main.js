@@ -13,6 +13,7 @@ const menuItems = [
     { name: "Sugar Less Tea", category: "Teas", description: "Milk tea brewed without sugar.", price: "₹15" },
     { name: "Rose Tea", category: "Teas", description: "Floral rose petal infused chai.", price: "₹20" },
     { name: "Chocolate Tea", category: "Teas", description: "Hot cocoa meets kadak chai.", price: "₹20" },
+    { name: "Irani Chai", category: "Teas", description: "Traditional Irani-style milk tea.", price: "₹20" },
 
     // Wellness Teas
     { name: "Green Tea", category: "Wellness Teas", description: "Lightly brewed antioxidant-rich tea.", price: "₹20" },
@@ -83,18 +84,6 @@ const menuItems = [
     { name: "Samosa", category: "Snacks", description: "Mini samosas fried crisp.", price: "₹5" },
     { name: "Oats Meal Bowl", category: "Snacks", description: "Savory oats with veggies.", price: "₹50" },
 
-    // Veg Sandwiches
-    { name: "Paneer Sandwich", category: "Veg Sandwiches", description: "Grilled paneer tikka filling.", price: "₹69" },
-    { name: "Mushroom Sandwich", category: "Veg Sandwiches", description: "Butter sautéed mushrooms with cheese.", price: "₹69" },
-    { name: "Mexican Pizza Sandwich", category: "Veg Sandwiches", description: "Beans, peppers and cheese melt.", price: "₹69" },
-    { name: "Mexican BBQ Pizza Sandwich", category: "Veg Sandwiches", description: "BBQ glaze, veggies and cheese.", price: "₹69" },
-
-    // Non-Veg Sandwiches
-    { name: "Chicken Sandwich", category: "Non-Veg Sandwiches", description: "Grilled chicken with house sauce.", price: "₹79" },
-    { name: "Crispy Chicken Sandwich", category: "Non-Veg Sandwiches", description: "Crispy fried chicken stuffed buns.", price: "₹79" },
-    { name: "Mexican Chicken Pizza Sandwich", category: "Non-Veg Sandwiches", description: "Spicy Mexican chicken filling.", price: "₹79" },
-    { name: "Mexican BBQ Chicken Pizza Sandwich", category: "Non-Veg Sandwiches", description: "BBQ chicken, cheese and jalapeños.", price: "₹79" },
-    { name: "Tandoori Chicken Sandwich", category: "Non-Veg Sandwiches", description: "Smoky tandoori chicken sandwich.", price: "₹79" },
 
     // Chicken Wings
     { name: "Chicken Wings (2 Piece)", category: "Chicken Wings", description: "Two-piece crispy wings.", price: "₹49" },
