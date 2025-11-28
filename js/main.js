@@ -185,27 +185,17 @@ if (menuSections) {
     renderMenu();
 }
 
-// WhatsApp function to open both numbers
-function openWhatsAppBoth(event) {
+// WhatsApp function - opens WhatsApp with the specified number
+function openWhatsApp(event) {
     event.preventDefault();
-    // Primary number: 6301661827
-    const primaryNumber = '916301661827';
-    // Secondary number: 7993747856
-    const secondaryNumber = '917993747856';
-    
-    // Open primary number first
-    window.open(`https://wa.me/${primaryNumber}`, '_blank');
-    
-    // Open secondary number after a short delay
-    setTimeout(() => {
-        window.open(`https://wa.me/${secondaryNumber}`, '_blank');
-    }, 500);
+    const whatsappNumber = '917993747856';
+    window.open(`https://wa.me/${whatsappNumber}`, '_blank');
 }
 
 // Attach WhatsApp click handlers to all WhatsApp links
 document.addEventListener('DOMContentLoaded', () => {
     const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
     whatsappLinks.forEach(link => {
-        link.addEventListener('click', openWhatsAppBoth);
+        link.addEventListener('click', openWhatsApp);
     });
 });
