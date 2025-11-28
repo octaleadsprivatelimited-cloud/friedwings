@@ -109,6 +109,7 @@ const menuItems = [
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 const menuSections = document.getElementById("menuSections");
+const instagramFeedEl = document.getElementById("instagramFeed");
 
 const categories = [...new Set(menuItems.map((item) => item.category))];
 
@@ -193,9 +194,60 @@ function openWhatsApp(event) {
 }
 
 // Attach WhatsApp click handlers to all WhatsApp links
-document.addEventListener('DOMContentLoaded', () => {
+async function loadInstagramFeed() {
+    if (!instagramFeedEl) return;
+    instagramFeedEl.innerHTML = '<p class="instagram-feed__empty">Loading real-time posts&hellip;</p>';
+
+    try {
+        const response = await fetch("/api/instagram-feed");
+        if (!response.ok) throw new Error("Failed to load feed");
+
+        const payload = await response.json();
+        const posts = Array.isArray(payload?.data) ? payload.data : [];
+
+        if (!posts.length) {
+            instagramFeedEl.innerHTML = '<p class="instagram-feed__empty">Instagram posts will appear here once published.</p>';
+            return;
+        }
+
+        instagramFeedEl.innerHTML = "";
+
+        posts.forEach((post) => {
+            const mediaUrl = post.media_type === "VIDEO" ? (post.thumbnail_url || post.media_url) : post.media_url;
+            const caption = post.caption ? post.caption.slice(0, 120) + (post.caption.length > 120 ? "…" : "") : "Fresh drop from the kitchen.";
+            const date = post.timestamp ? new Date(post.timestamp).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "";
+
+            const card = document.createElement("article");
+            card.className = "instagram-card";
+            card.innerHTML = `
+                <a class="instagram-card__media" href="${post.permalink}" target="_blank" rel="noopener">
+                    <img src="${mediaUrl}" alt="Instagram post preview" loading="lazy" />
+                </a>
+                <div class="instagram-card__body">
+                    <p class="instagram-card__caption">${caption}</p>
+                    <p class="instagram-card__meta">${date}</p>
+                    <a class="instagram-card__link" href="${post.permalink}" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0-2h10c3.859 0 7 3.141 7 7v10c0 3.859-3.141 7-7 7H7c-3.859 0-7-3.141-7-7V7C0 3.141 3.141 0 7 0zm12 6a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
+                        </svg>
+                        View on Instagram
+                    </a>
+                </div>
+            `;
+
+            instagramFeedEl.appendChild(card);
+        });
+    } catch (error) {
+        console.error(error);
+        instagramFeedEl.innerHTML = '<p class="instagram-feed__empty">Unable to load Instagram feed right now. Please try again later.</p>';
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
     const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
-    whatsappLinks.forEach(link => {
-        link.addEventListener('click', openWhatsApp);
+    whatsappLinks.forEach((link) => {
+        link.addEventListener("click", openWhatsApp);
     });
+
+    loadInstagramFeed();
 });

@@ -65,6 +65,22 @@
         </div>
     </section>
 
+    <section class="section instagram" id="instagram">
+        <div class="section__header">
+            <p class="section__eyebrow">Live from Instagram</p>
+            <h2>See the latest from @fried.wings_n_tea</h2>
+            <p class="section__subtitle">
+                New drops, limited-edition menus, and behind-the-scenes moments stream here the moment they go live on Instagram.
+            </p>
+            <a class="btn btn--primary" href="https://www.instagram.com/fried.wings_n_tea" target="_blank" rel="noopener">
+                Follow on Instagram
+            </a>
+        </div>
+        <div class="instagram-feed" id="instagramFeed" aria-live="polite">
+            <p class="instagram-feed__empty">Loading real-time posts&hellip;</p>
+        </div>
+    </section>
+
     <section class="section section--menu-items" id="menu-items">
         <div class="menu-items-section">
             <div class="menu-items-section__header">
@@ -391,14 +407,20 @@
                 </div>
             </div>
             <div class="menu-items-section__download">
-                <a href="assets/menu.pdf" class="btn btn--primary btn--download" download="Fried Wings N Tea Menu.pdf">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0.5rem;">
-                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Download Menu
-                </a>
+                <figure class="download-menu__preview">
+                    <img src="assets/download-menu.jpeg" alt="Latest Fried Wings N Tea menu preview" loading="lazy" />
+                </figure>
+                <div class="download-menu__cta">
+                    <p>Get the complete snacks, shakes, teas, and wings lineup instantly.</p>
+                    <a href="assets/menu.pdf" class="btn btn--primary btn--download" download="Fried Wings N Tea Menu.pdf">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0.5rem;">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Download Menu
+                    </a>
+                </div>
             </div>
         </div>
     </section>
