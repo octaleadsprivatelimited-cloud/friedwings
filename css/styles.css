@@ -1889,6 +1889,9 @@ img {
 
 .franchise-contact__link--whatsapp .franchise-contact__icon svg {
     color: #ffffff;
+    width: 28px;
+    height: 28px;
+    display: block;
 }
 
 .franchise-contact__link--whatsapp .franchise-contact__label {
@@ -1926,6 +1929,9 @@ img {
 
 .franchise-contact__link--phone .franchise-contact__icon svg {
     color: var(--accent);
+    width: 28px;
+    height: 28px;
+    display: block;
 }
 
 .franchise-contact__link--phone .franchise-contact__label {
@@ -1984,8 +1990,10 @@ img {
 .franchise-contact__icon svg {
     color: var(--accent);
     transition: color 0.3s ease;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    display: block;
+    flex-shrink: 0;
 }
 
 .franchise-contact__info {

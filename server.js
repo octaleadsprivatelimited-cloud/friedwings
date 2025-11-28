@@ -1,8 +1,8 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+import http from 'http';
+import fs from 'fs';
+import path from 'path';
 
-const port = 8000;
+const port = 3004;
 
 const mimeTypes = {
   '.html': 'text/html',
