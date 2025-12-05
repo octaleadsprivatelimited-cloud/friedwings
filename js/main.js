@@ -103,7 +103,20 @@ const menuItems = [
     // Chicken Strips
     { name: "Chicken Strips (2 Piece)", category: "Chicken Strips", description: "Two breaded chicken strips.", price: "₹59" },
     { name: "Chicken Strips (4 Piece)", category: "Chicken Strips", description: "Four breaded chicken strips.", price: "₹119" },
-    { name: "Chicken Strips (6 Piece)", category: "Chicken Strips", description: "Six breaded chicken strips.", price: "₹179" }
+    { name: "Chicken Strips (6 Piece)", category: "Chicken Strips", description: "Six breaded chicken strips.", price: "₹179" },
+
+    // Sandwiches
+    { name: "Chicken Sandwich", category: "Sandwiches", description: "Classic grilled chicken sandwich with fresh veggies.", price: "₹79" },
+    { name: "Crispy Chicken Sandwich", category: "Sandwiches", description: "Crispy fried chicken with mayo and lettuce.", price: "₹79" },
+    { name: "Mexican Chicken Pizza Sandwich", category: "Sandwiches", description: "Spicy Mexican-style chicken with pizza flavors.", price: "₹79" },
+    { name: "Mexican BBQ Chicken Pizza Sandwich", category: "Sandwiches", description: "BBQ chicken with Mexican spices and pizza twist.", price: "₹79" },
+    { name: "Tandoori Chicken Sandwich", category: "Sandwiches", description: "Tandoori marinated chicken with mint chutney.", price: "₹79" },
+    { name: "Paneer Sandwich", category: "Sandwiches", description: "Grilled paneer with fresh vegetables and chutney.", price: "₹69" },
+    { name: "Mushroom Sandwich", category: "Sandwiches", description: "Sautéed mushrooms with herbs and cheese.", price: "₹69" },
+    { name: "Mexican Pizza Sandwich", category: "Sandwiches", description: "Veg Mexican-style sandwich with pizza flavors.", price: "₹69" },
+    { name: "Mexican BBQ Pizza Sandwich", category: "Sandwiches", description: "Veg BBQ sandwich with Mexican spices.", price: "₹69" },
+    { name: "Veg Sandwich", category: "Sandwiches", description: "Fresh vegetables with herbs and chutney.", price: "₹59" },
+    { name: "Non Veg Sandwich", category: "Sandwiches", description: "Mixed non-veg filling with fresh veggies.", price: "₹79" }
 ];
 
 const navToggle = document.getElementById("navToggle");
@@ -189,7 +202,7 @@ if (menuSections) {
 // WhatsApp function - opens WhatsApp with the specified number
 function openWhatsApp(event) {
     event.preventDefault();
-    const whatsappNumber = '917993747856';
+    const whatsappNumber = '919550145015';
     window.open(`https://wa.me/${whatsappNumber}`, '_blank');
 }
 
