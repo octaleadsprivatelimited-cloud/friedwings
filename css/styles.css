@@ -2515,7 +2515,7 @@ body[data-page="menu"] .footer__links a:hover {
 }
 
 body[data-page="menu"] .footer__aside {
-    color: #1a1a1a;
+    color: #000000;
 }
 
 body[data-page="experience"] {
@@ -2712,7 +2712,7 @@ body[data-page="experience"] .footer__links a:hover {
 }
 
 body[data-page="experience"] .footer__aside {
-    color: #1a1a1a;
+    color: #000000;
 }
 
 body[data-page="franchise"] {
@@ -2937,7 +2937,7 @@ body[data-page="franchise"] .footer__links a:hover {
 }
 
 body[data-page="franchise"] .footer__aside {
-    color: #1a1a1a;
+    color: #000000;
 }
 
 body[data-page="contact"] {
@@ -3091,7 +3091,7 @@ body[data-page="contact"] .footer__links a:hover {
 }
 
 body[data-page="contact"] .footer__aside {
-    color: #1a1a1a;
+    color: #000000;
 }
 
 /* Privacy Policy Page Styles */
@@ -4089,7 +4089,11 @@ textarea:focus {
     gap: 1.25rem;
     flex-wrap: wrap;
     row-gap: 0.5rem;
-    color: #1a1a1a;
+    color: #000000;
+}
+
+.footer__aside span {
+    color: #000000;
 }
 
 .footer__aside a,
@@ -4131,7 +4135,11 @@ textarea:focus {
 }
 
 .footer__brand {
-    color: #1a1a1a;
+    color: #000000;
+}
+
+.footer__brand span {
+    color: #000000;
 }
 
 .footer--centered .footer__aside,
